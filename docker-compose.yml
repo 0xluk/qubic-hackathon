@@ -1,0 +1,16 @@
+services:
+  # Archiver node services
+  qubic-node-proxy:
+    image: github.com/0xluk/qubic-hackathon
+    container_name: qubic-hackathon
+    environment:
+      QUBIC_HACKATHON_SERVER_MNEMONIC: "mnemonic/seed here"
+      QUBIC_HACKATHON_SERVER_SOURCE_ADDR: "source address for the mnemonic"
+    ports:
+      - "127.0.0.1:8000:8000"
+    networks:
+      - qubic
+    restart: always
+
+networks:
+  qubic:
